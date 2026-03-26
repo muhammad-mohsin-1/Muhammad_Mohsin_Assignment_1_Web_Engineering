@@ -481,3 +481,20 @@ form button:hover {
     from { top: -50px; opacity: 0; }
     to { top: 20px; opacity: 1; }
 }
+
+/* Mobile Screens (Phones) */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none; /* Mobile menu baad mein bana sakte hain */
+    }
+    .hero-section h1 {
+        font-size: 2rem; /* Text chota kar dein */
+    }
+    .image-container {
+        flex-direction: column; /* Images ek ke upar ek aayengi */
+    }
+    .footer-container {
+        grid-template-columns: 1 row; /* Footer columns single line mein */
+        text-align: center;
+    }
+}

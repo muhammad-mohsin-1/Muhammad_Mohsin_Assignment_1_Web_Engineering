@@ -18,15 +18,14 @@
     </div>
 
     <header class="main-header">
-       <nav class="navbar">
-    <div class="logo">
-        <a href="#">MM.</a>
-    </div>
-    
-    <button class="menu-toggle" id="mobile-menu">
-        <i class="fas fa-bars"></i>
-    </button>
 
+<nav class="navbar">
+    <div class="logo">
+        <a href="#" style="text-decoration: none; color: #3498db;">MM.</a>
+    </div>
+    <button class="menu-toggle" id="mobile-menu">
+        <i class="fas fa-bars" style="color: #3498db;"></i>
+    </button>
     <ul class="nav-links" id="nav-list">
         <li><a href="#about">About</a></li>
         <li><a href="#gallery">Portfolio</a></li>
@@ -34,7 +33,6 @@
         <li><a href="#contact">Contact</a></li>
     </ul>
 </nav>
-
         <div class="hero-section">
             <div class="hero-content">
                 <span class="greeting">Hello, I'm</span>
@@ -211,22 +209,15 @@
     const menuBtn = document.getElementById('mobile-menu');
     const navList = document.getElementById('nav-list');
 
-    menuBtn.addEventListener('click', (e) => {
-        e.stopPropagation(); // Stops menu from closing immediately
+    menuBtn.addEventListener('click', function() {
         navList.classList.toggle('active');
-        
-        const icon = menuBtn.querySelector('i');
-        icon.classList.toggle('fa-bars');
-        icon.classList.toggle('fa-times');
     });
 
-    // Bahar click karne se menu band ho jaye (Professional behavior)
-    document.addEventListener('click', () => {
-        if(navList.classList.contains('active')) {
+    // Close menu when a link is clicked
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
             navList.classList.remove('active');
-            menuBtn.querySelector('i').classList.add('fa-bars');
-            menuBtn.querySelector('i').classList.remove('fa-times');
-        }
+        });
     });
 </script>
 

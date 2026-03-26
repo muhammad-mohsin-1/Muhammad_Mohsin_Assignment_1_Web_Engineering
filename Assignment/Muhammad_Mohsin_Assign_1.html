@@ -19,16 +19,21 @@
 
     <header class="main-header">
         <nav class="navbar">
-            <div class="logo">
-                <a href="#" style="text-decoration: none; color: #3498db;">MM.</a>
-            </div>
-            <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#gallery">Portfolio</a></li>
-                <li><a href="#interests">Interests</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
+    <div class="logo">
+        <a href="#" style="text-decoration: none; color: #3498db;">MM.</a>
+    </div>
+
+    <button class="menu-toggle" id="mobile-menu">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <ul class="nav-links" id="nav-list">
+        <li><a href="#about">About</a></li>
+        <li><a href="#gallery">Portfolio</a></li>
+        <li><a href="#interests">Interests</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
 
         <div class="hero-section">
             <div class="hero-content">
@@ -201,6 +206,28 @@
         }
     });
     </script>
+
+    <script>
+    const menuBtn = document.getElementById('mobile-menu');
+    const navList = document.getElementById('nav-list');
+
+    menuBtn.addEventListener('click', () => {
+        navList.classList.toggle('active');
+        // Icon change: Bars se X ban jaye ga
+        const icon = menuBtn.querySelector('i');
+        icon.classList.toggle('fa-bars');
+        icon.classList.toggle('fa-times');
+    });
+
+    // Link click karne par menu band ho jaye
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            navList.classList.remove('active');
+            menuBtn.querySelector('i').classList.add('fa-bars');
+            menuBtn.querySelector('i').classList.remove('fa-times');
+        });
+    });
+</script>
 
 </body>
 </html>

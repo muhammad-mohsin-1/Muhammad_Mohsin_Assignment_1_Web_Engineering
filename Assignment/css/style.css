@@ -482,102 +482,78 @@ form button:hover {
     to { top: 20px; opacity: 1; }
 }
 
-/* 1. Desktop par Menu Toggle chhupane ke liye */
-.menu-toggle {
-    display: none;
-    background: none;
-    border: none;
-    color: #3498db;
-    font-size: 1.5rem;
-    cursor: pointer;
-}
-
+/* media queries */
 @media (max-width: 768px) {
-    /* Logo Position Fix */
+    /* Logo & Menu Button Reset */
     .navbar {
         display: flex !important;
-        justify-content: space-between !important; /* Logo left, Button right */
+        justify-content: space-between !important;
         align-items: center !important;
-        padding: 10px 15px !important;
-        position: relative;
+        padding: 15px !important;
     }
 
-    .logo {
-        margin-left: 5px !important; /* Thora sa gap left side se */
+    .logo a {
+        color: #3498db !important; /* MM Logo Blue color */
+        font-weight: bold;
     }
 
-    /* Welcome Screen Scaling Fix */
-    .welcome-text {
-        font-size: 2.2rem !important; /* Scaling down for mobile */
-        width: 100% !important;
-        text-align: center;
-    }
-    
-    .name-text {
-        font-size: 1rem !important;
-        white-space: nowrap;
+    .menu-toggle {
+        display: block !important; /* 3 lines wapis show hon gi */
+        background: none;
+        border: none;
+        cursor: pointer;
     }
 
-    /* Professional Dropdown Menu */
+    /* Dropdown Menu (Clean & Simple) */
     .nav-links {
         display: none !important;
         position: absolute;
-        top: 100%; /* Navbar ke bilkul niche */
+        top: 60px;
         right: 15px;
-        width: 200px !important; /* Pura screen nahi cover karega */
-        background: rgba(26, 26, 26, 0.95);
-        border-radius: 10px;
-        box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+        background: #2c3e50 !important; /* Professional Dark Blue/Grey */
+        width: 180px !important;
+        border-radius: 8px;
         padding: 10px 0 !important;
-        z-index: 9999;
-        transition: all 0.3s ease;
+        z-index: 1000;
+        box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
     }
 
     .nav-links.active {
-        display: block !important;
-        animation: fadeInDown 0.3s ease forwards;
+        display: flex !important;
+        flex-direction: column !important;
     }
 
-    .nav-links li {
-        width: 100%;
-        text-align: left;
-        padding: 0 20px;
-    }
-
-    .nav-links a {
+    .nav-links li a {
+        color: white !important;
+        padding: 10px 20px !important;
         display: block;
-        padding: 12px 0;
-        border-bottom: 1px solid #333;
+        text-align: left;
     }
 
-    /* Course Progress Table Fix */
-    section#gallery {
-        overflow-x: auto !important; /* Table scrollable if too wide */
+    /* Interests & List Section (Stacking them vertically for alignment) */
+    .lists-flex {
+        display: flex !important;
+        flex-direction: column !important; /* Ek ke neeche ek boxes */
+        align-items: center !important;
+        gap: 25px !important;
     }
 
-    table {
+    .lists-flex > div {
         width: 100% !important;
-        min-width: 320px; /* Minimum width so it doesn't crush */
-        border-collapse: collapse !important;
+        max-width: 350px !important; /* Fixed width for both boxes */
         margin: 0 auto !important;
+        text-align: left !important;
+        padding: 20px !important;
+        border: 1px solid #eee;
+        border-radius: 10px;
     }
 
-    th, td {
-        padding: 10px 5px !important;
-        font-size: 0.85rem !important;
-        text-align: center !important; /* Text centered in cells */
-        border: 1px solid #ddd !important; /* Visible borders */
-        word-wrap: break-word;
+    .lists-flex h3 {
+        text-align: center !important;
+        margin-bottom: 15px !important;
     }
 
-    thead th {
-        background-color: #3498db !important;
-        color: white;
+    .lists-flex ul, .lists-flex ol {
+        padding-left: 25px !important; /* Bullets align ho jayen ge */
     }
-}
-
-/* Smooth Animation for Menu */
-@keyframes fadeInDown {
-    from { opacity: 0; transform: translateY(-10px); }
-    to { opacity: 1; transform: translateY(0); }
 }

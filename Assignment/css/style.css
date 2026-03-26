@@ -482,191 +482,86 @@ form button:hover {
     to { top: 20px; opacity: 1; }
 }
 
+/* 1. Desktop par Menu Toggle chhupane ke liye */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: #3498db;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
 /* =========================================
-   FULL MOBILE RESPONSIVE FIX (max-width: 768px)
-   All issues fixed: Loader, Hero, Interests, Tables, Forms
+   FINAL MOBILE RESPONSIVE FIX (max-width: 768px)
 ========================================= */
 @media (max-width: 768px) {
-
-    /* --- 1. Global Reset (CRITICAL) --- */
-    body {
-        margin: 0 !important;
-        padding: 0 !important;
-        overflow-x: hidden !important; /* Prevents horizontal scroll entirely */
+    
+    /* Navbar & Hamburger Menu */
+    .menu-toggle {
+        display: block !important; /* Mobile par 3 lines dikhayen */
+        position: absolute;
+        right: 20px;
+        top: 20px;
     }
 
-    section {
-        padding: 50px 20px !important; /* Default section padding on mobile */
-        width: 100% !important;
-        box-sizing: border-box !important;
-    }
-
-    h2 {
-        font-size: 2rem !important;
-        text-align: center;
-        margin-bottom: 30px !important;
-    }
-
-    /* --- 2. Loader/Welcome Screen Fix (Image 1) --- */
-    #loader {
-        width: 100% !important;
-        height: 100% !important;
-        overflow: hidden !important;
-    }
-
-    .loader-content {
-        max-width: 100% !important;
-        padding: 20px !important;
-        text-align: center !important;
-    }
-
-    .welcome-text {
-        font-size: 3rem !important; /* Smaller text for mobile */
-    }
-
-    .name-text {
-        font-size: 1.2rem !important;
-    }
-
-    .loading-bar {
-        width: 80% !important; /* Smaller bar */
-        margin: 0 auto !important;
-    }
-
-    /* --- 3. Navigation Bar (Image 2 - Fixed Links) --- */
-    .navbar {
-        flex-direction: column !important; /* Stack vertically on mobile */
-        padding: 20px 0 !important;
-    }
-
-    .logo {
-        margin-bottom: 15px !important;
-    }
-
-    /* FIX: Show links, stack vertically, center alignment */
     .nav-links {
-        display: flex !important; /* Re-enable links */
-        flex-direction: column !important; /* Stack vertically */
-        align-items: center !important;
-        gap: 15px !important;
+        display: none !important; /* Shuru mein menu chhupa ho */
+        flex-direction: column !important;
         width: 100% !important;
-        padding: 0 !important;
-        margin: 0 !important;
+        background: #1a1a1a; /* Dark background for menu */
+        position: absolute;
+        top: 60px;
+        left: 0;
+        padding: 20px 0 !important;
+        z-index: 1000;
     }
 
-    .nav-links li {
-        margin: 0 !important;
-    }
-
-    .nav-links a {
-        font-size: 1.1rem !important;
-        padding: 8px 0 !important;
-    }
-
-    /* --- 4. Hero Section & About Me (Image 2) --- */
-    .hero-section {
-        padding: 60px 0 !important;
-        text-align: center !important;
-        min-height: auto !important;
-    }
-
-    .hero-content {
-        max-width: 100% !important;
-        margin: 0 auto !important;
-        padding: 0 10px !important;
-    }
-
-    .hero-section h1 {
-        font-size: 2.5rem !important;
-    }
-
-    .hero-buttons {
+    /* Menu open hone par ye class trigger hogi */
+    .nav-links.active {
         display: flex !important;
-        flex-direction: column !important; /* Stack vertically */
-        gap: 15px !important;
-        align-items: center !important;
     }
 
-    .btn-primary, .btn-secondary {
-        width: 80% !important;
-        text-align: center !important;
-    }
-
+    /* About Me Alignment Fix */
     #about p {
-        width: 100% !important; /* Paragraph takes full section width */
-        max-width: 100% !important;
-        margin-left: 0 !important; /* Remove large desktop margin */
-        padding: 0 !important;
-        text-align: center !important;
-        font-size: 1.1rem !important;
-    }
-
-    /* --- 5. Course Progress Table (Image 3) --- */
-    #gallery table {
-        width: 100% !important; /* Table occupies section width */
-        max-width: 100% !important;
-        margin: 0 !important; /* Remove any center margins */
-        table-layout: fixed !important; /* Control column sizing */
-    }
-
-    #gallery th, #gallery td {
-        font-size: 0.9rem !important; /* Smaller text for small columns */
-        padding: 8px !important;
-        word-wrap: break-word !important; /* Wrap long subjects */
-        border: 1px solid black !important;
-    }
-
-    /* --- 6. Interests & List Boxes (Image 4 - Hobbies & Priorities) --- */
-    #interests div:nth-child(2),
-    #interests div:nth-child(3) {
-        flex-direction: column !important; /* Stack lists vertically */
-        align-items: center !important;
-        gap: 30px !important;
-    }
-
-    /* Targets the list containers (the boxes that were sticking out) */
-    .hobbies, .Priorities {
-        width: 100% !important; /* Box takes full width */
-        max-width: 400px !important; /* Limit maximum size */
-        margin-left: 0 !important; /* Remove large desktop margin */
-        padding: 20px !important; /* Adjust internal padding */
-        box-sizing: border-box !important;
-        margin-bottom: 20px !important;
-    }
-
-    /* Ensures the actual list alignment */
-    #interests ul, #interests ol {
-        margin: 0 auto !important; /* Center the list within the box */
-        display: inline-block !important; /* Shrink to fit content */
-        text-align: left !important; /* Align list items to left */
-        padding-left: 20px !important;
-    }
-
-    /* --- 7. Contact Form Fix (Image 5) --- */
-    #contactForm {
-        width: 100% !important; /* Form takes section width */
-        max-width: 400px !important;
-        margin-left: 0 !important; /* Remove large desktop margin */
+        text-align: justify !important; /* Dono sides se barabar */
         padding: 0 10px !important;
+        line-height: 1.6 !important;
+        width: 95% !important;
+        margin: 0 auto !important;
     }
 
-    #contactForm input, 
-    #contactForm textarea {
-        width: 100% !important; /* Inputs take full width of form */
-        font-size: 1.1rem !important;
-        box-sizing: border-box !important;
-    }
-
-    /* --- 8. Footer Fix --- */
-    .main-footer .flex {
-        flex-direction: column !important; /* Stack vertically on mobile */
-        text-align: center !important;
+    /* Hobbies & Priorities Boxes Fix */
+    .lists-flex {
+        flex-direction: column !important;
         align-items: center !important;
-        gap: 30px !important;
+        gap: 20px !important;
     }
 
-    .main-footer .flex > div {
+    .lists-flex > div {
+        width: 90% !important; /* Boxes same size ke honge */
+        min-height: 200px !important; /* Sab ki height barabar */
+        margin: 0 !important;
+        padding: 20px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: flex-start !important; /* Content left align */
+    }
+
+    /* List Item Alignment (Bullets Fix) */
+    .lists-flex h3 {
+        margin-bottom: 15px !important;
+        border-bottom: 2px solid #3498db;
+        width: fit-content;
+    }
+
+    .lists-flex ul, .lists-flex ol {
+        padding-left: 20px !important;
+        text-align: left !important;
         width: 100% !important;
-        margin-left: 0 !important;
+    }
+
+    .lists-flex li {
+        margin-bottom: 10px !important;
     }
 }

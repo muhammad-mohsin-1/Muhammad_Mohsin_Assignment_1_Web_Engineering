@@ -482,19 +482,144 @@ form button:hover {
     to { top: 20px; opacity: 1; }
 }
 
-/* Mobile Screens (Phones) */
+/* =========================================
+   FULL MOBILE RESPONSIVE FIX (max-width: 768px)
+========================================= */
 @media (max-width: 768px) {
-    .nav-links {
-        display: none; /* Mobile menu baad mein bana sakte hain */
+    /* 1. Reset Global Margins/Padding for Mobile */
+    body, main, header, footer {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+        overflow-x: hidden !important; /* Prevent horizontal scroll */
     }
-    .hero-section h1 {
-        font-size: 2rem; /* Text chota kar dein */
+
+    section {
+        padding: 40px 0 !important;
+        margin-bottom: 20px !important;
     }
-    .image-container {
-        flex-direction: column; /* Images ek ke upar ek aayengi */
-    }
-    .footer-container {
-        grid-template-columns: 1 row; /* Footer columns single line mein */
+
+    h2 {
+        font-size: 1.8rem !important;
         text-align: center;
+        margin-bottom: 25px !important;
+    }
+
+    /* 2. Navigation Bar Fix (CRITICAL) */
+    .navbar {
+        flex-direction: column !important; /* Logo on top, links below */
+        padding: 15px 0 !important;
+        align-items: center !important;
+    }
+
+    .logo {
+        margin-bottom: 15px !important;
+    }
+
+    /* FIX: Display links but align them vertically for mobile */
+    .nav-links {
+        display: flex !important; /* Re-enable links */
+        flex-direction: column !important; /* Stack them vertically */
+        width: 100% !important;
+        align-items: center !important;
+        gap: 10px !important;
+        padding: 0 !important;
+    }
+
+    .nav-links li {
+        margin: 0 !important;
+    }
+
+    .nav-links a {
+        font-size: 1.1rem !important;
+        padding: 8px 15px !important;
+        display: block !important;
+    }
+
+    /* 3. Hero Section Fix */
+    .hero-section {
+        padding: 60px 0 !important;
+        text-align: center !important;
+        min-height: auto !important; /* Remove fixed height */
+    }
+
+    .hero-content {
+        max-width: 100% !important;
+        margin: 0 auto !important;
+    }
+
+    .hero-section h1 {
+        font-size: 2.2rem !important;
+        line-height: 1.2 !important;
+    }
+
+    .tagline {
+        font-size: 1.1rem !important;
+        margin-bottom: 30px !important;
+    }
+
+    .hero-buttons {
+        display: flex !important;
+        flex-direction: column !important; /* Stack buttons vertically */
+        gap: 15px !important;
+        align-items: center !important;
+    }
+
+    .btn-primary, .btn-secondary {
+        width: 80% !important; /* Buttons full width-ish */
+        text-align: center !important;
+    }
+
+    /* 4. Visual Gallery Fix */
+    .image-container {
+        display: flex !important;
+        flex-direction: column !important; /* Stack images vertically */
+        gap: 20px !important;
+        align-items: center !important;
+    }
+
+    .image-container img {
+        width: 100% !important; /* Images take full width */
+        max-width: 400px !important; /* Limit maximum size */
+        height: auto !important; /* Maintain aspect ratio */
+    }
+
+    /* 5. Lists (Hobbies/Priorities) Fix */
+    .lists-flex {
+        display: flex !important;
+        flex-direction: column !important; /* Stack boxes vertically */
+        gap: 30px !important;
+        align-items: center !important;
+    }
+
+    .lists-flex > div {
+        width: 100% !important; /* Boxes take full width */
+        max-width: 400px !important;
+        margin: 0 !important;
+    }
+
+    /* 6. Contact Form Fix */
+    #contactForm {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 0 10px !important;
+    }
+
+    #contactForm input, #contactForm textarea {
+        width: 100% !important; /* Full width input fields */
+        font-size: 1rem !important;
+    }
+
+    /* 7. Footer Fix */
+    .footer-container {
+        display: flex !important;
+        flex-direction: column !important; /* Stack footer sections */
+        gap: 30px !important;
+        text-align: center !important;
+        align-items: center !important;
+    }
+
+    .footer-col {
+        width: 100% !important;
+        margin: 0 !important;
     }
 }

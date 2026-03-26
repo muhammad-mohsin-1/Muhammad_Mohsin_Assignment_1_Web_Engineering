@@ -52,8 +52,8 @@
         <section id="gallery">
             <h2>Visual Gallery</h2>
             <div class="image-container">
-                <img src="Public/pic_1.jpg" alt="Project Image 1">
-                <img src="Public/pic_2.jpg" alt="Project Image 2">
+                <img src="Public\pic_1.jpg" alt="Project Image 1">
+                <img src="public\pic_2.jpg" alt="Project Image 2">
             </div>
         </section>
 
@@ -110,12 +110,14 @@
 
         <section id="contact">
             <h2>Contact Me</h2>
-            <form>
-                <input type="text" placeholder="Your Name" required><br>
-                <input type="email" placeholder="Your Email" required><br>
-                <textarea placeholder="Your Message"></textarea><br>
-                <button type="submit">Send Message</button>
-            </form>
+<form id="contactForm"> 
+    <input type="text" placeholder="Your Name" required><br>
+    <input type="email" placeholder="Your Email" required><br>
+    <textarea placeholder="Your Message" required></textarea><br>
+    <button type="submit">Send Message</button>
+    
+    <div id="msgStatus" class="success-message">Message Sent Successfully! 🚀</div>
+</form>
         </section>
     </main>
 
@@ -158,13 +160,29 @@
 </footer>
 
 <script>
-    // Hide Loader after 2.5 second of website load 
+    // Website load hone ke 2.5 seconds baad loader ko hide kar do
     window.addEventListener("load", function() {
         setTimeout(function() {
             document.getElementById("loader").classList.add("loader-hidden");
         }, 2500); // 2500ms = 2.5 seconds
     });
 </script>
+
+<script>
+    document.getElementById('contactForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Reload rokne ke liye
+        
+        const status = document.getElementById('msgStatus');
+        status.style.display = 'block'; // Popup dikhaye ga
+        
+        this.reset(); // Form khali kare ga
+
+        // Sirf 2 seconds (2000 milliseconds) baad gayab ho jaye ga
+        setTimeout(() => {
+            status.style.display = 'none';
+        }, 2000);
+    });
+    </script>
 
 </body>
 </html>

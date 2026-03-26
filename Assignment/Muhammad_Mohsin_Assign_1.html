@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muhammad Mohsin - Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css\style.css">
+</head>
+<body>
+
+    <div id="loader">
+    <div class="loader-content">
+        <h1 class="welcome-text">WELCOME</h1>
+        <p class="name-text">Muhammad Mohsin Portfolio</p>
+        <div class="loading-bar"></div>
+    </div>
+</div>
+
+    <header class="main-header">
+    <nav class="navbar">
+        <div class="logo">
+    <a href="#" style="text-decoration: none; color: #3498db;">MM.</a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#gallery">Portfolio</a></li>
+            <li><a href="#interests">Interests</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="hero-section">
+        <div class="hero-content">
+            <span class="greeting">Hello, I'm</span>
+            <h1>Muhammad Mohsin</h1>
+            <p class="tagline">Software Engineering Student | Web Developer | Climate Advocate</p>
+            <div class="hero-buttons">
+                <a href="#contact" class="btn-primary">Get In Touch</a>
+                <a href="#gallery" class="btn-secondary">Visual Gallery</a>
+            </div>
+        </div>
+    </div>
+</header>
+
+    <main>
+        <section id="about">
+            <h2>About Me</h2>
+            <p>I am a dedicated Software Engineering student with a strong interest in building scalable web applications and exploring Artificial Intelligence. Beyond coding, I am an active member of the im4climate initiative, where I use my digital skills to spread awareness about climate change. I enjoy solving complex problems and am constantly learning new technologies like Data Warehousing and Operating Systems to enhance my technical expertise.</p>
+        </section>
+
+        <section id="gallery">
+            <h2>Visual Gallery</h2>
+            <div class="image-container">
+                <img src="Public\pic_1.jpg" alt="Project Image 1">
+                <img src="public\pic_2.jpg" alt="Project Image 2">
+            </div>
+        </section>
+
+        <section>
+            <h2>Course Progress</h2>
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>Subject</th>
+                        <th>Instructor</th>
+                        <th>Grade/Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Software Design & Architecture</td>
+                        <td>Sir Salman</td>
+                        <td>A-</td>
+                    </tr>
+                    <tr>
+                        <td>Artificial Intelligence</td>
+                        <td>Sir Awais Rasool</td>
+                        <td>B+</td>
+                    </tr>
+                    <tr>
+                        <td>Operations Research</td>
+                        <td>Mam Sana Munir</td>
+                        <td>A-</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="interests">
+    <h2>Interests & Lists</h2>
+    <div class="lists-flex"> <div>
+            <h3>Hobbies</h3>
+            <ul>
+                <li>Coding & Debugging</li>
+                <li>Climate Awareness</li>
+                <li>Gaming</li>
+            </ul>
+        </div>
+        <div>
+            <h3>Priorities</h3>
+            <ol>
+                <li>Complete Degree</li>
+                <li>Work as Freelancer</li>
+                <li>Master in Data Engineer</li>
+            </ol>
+        </div>
+    </div>
+       </section>
+
+        <section id="contact">
+            <h2>Contact Me</h2>
+            <form>
+                <input type="text" placeholder="Your Name" required><br>
+                <input type="email" placeholder="Your Email" required><br>
+                <textarea placeholder="Your Message"></textarea><br>
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+    <div class="footer-container">
+        <div class="footer-col brand-col">
+            <h3>Muhammad Mohsin</h3>
+            <p>I am a Software Engineering student focused on creating modern web solutions and raising climate awareness through digital innovation.</p>
+        </div>
+
+        <div class="footer-col">
+            <h4>Quick Links</h4>
+            <ul>
+                <li><a href="#about"><i class="fas fa-chevron-right"></i> About My Journey</a></li>
+                <li><a href="#gallery"><i class="fas fa-chevron-right"></i> Visual Gallery</a></li>
+                <li><a href="#interests"><i class="fas fa-chevron-right"></i> My Interests</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-col contact-info">
+            <h4>Contact Info</h4>
+            <p><i class="fas fa-map-marker-alt"></i> Lahore, Pakistan</p>
+            <p><a href="mailto:mohsinimran203@gmail.com"><i class="fas fa-envelope"></i> mohsinimran203@gmail.com</a></p>
+            <p><a href="https://wa.me/923224374661" target="_blank"><i class="fab fa-whatsapp"></i> +92 322 4374661</a></p>
+        </div>
+
+        <div class="footer-col">
+            <h4>Connect</h4>
+            <div class="social-links">
+                <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                <a href="https://github.com" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i> Facebook</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="footer-bottom">
+        <p>&copy; 2026 Muhammad Mohsin | All Rights Reserved</p>
+    </div>
+</footer>
+
+<script>
+    // Website load hone ke 2.5 seconds baad loader ko hide kar do
+    window.addEventListener("load", function() {
+        setTimeout(function() {
+            document.getElementById("loader").classList.add("loader-hidden");
+        }, 2500); // 2500ms = 2.5 seconds
+    });
+</script>
+
+</body>
+</html>
